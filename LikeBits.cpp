@@ -15,13 +15,12 @@ const int N = 10;
 // 0000000000
 // 0000000001
 // 0000000010
-// ~
+vector<vector<int>> bit;
 
 void dfs(vector<int> &A) {
     // 終端条件
     if (A.size() == N) {
-        for (int i = 0; i < N; ++i) cout << A[i];
-        cout << endl;
+        bit.push_back(A);
         return;
     }
 
@@ -35,5 +34,11 @@ void dfs(vector<int> &A) {
 int main() {
     vector<int> A;
     dfs(A);
+    for(int i = 0;i < bit.size();i++) {
+        for(int j = 0;j < N;j++) {
+            cout << bit[i][j];
+        }
+        cout << endl;
+    }
 }
 
